@@ -80,7 +80,7 @@ class ImageFile extends Image
                 throw new GenerationError($result);
             }
 
-            Grav::instance()->fireEvent('onImageMediumSaved', new Event(['image' => $target]));
+            Grav::instance()->fireEvent('onImageMediumSaved', new Event(['image' => $target, 'original_image' => $this->getFilePath()]));
         };
 
         // Asking the cache for the cacheFile
